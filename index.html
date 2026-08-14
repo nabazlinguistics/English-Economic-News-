@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Article Occurrence in English Economic News | MA Corpus Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="Dashboard navigation">
+      <div class="brand">
+        <span class="brand-mark">RQ</span>
+        <span>Corpus Dashboard</span>
+      </div>
+      <div class="nav-actions">
+        <a href="#search">Search</a>
+        <a href="#outlets">Outlets</a>
+        <a href="#titles">Titles</a>
+      </div>
+    </nav>
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">MA Project · Academic Year 2025-2026</p>
+        <h1>A Corpus-Based Analysis of the Occurrence of Articles in English Economic News</h1>
+        <p class="subtitle">Prepared by <strong>Nabaz Muhammad Saeed</strong> · Supervised by <strong>Asst. Prof. Dr. Salih Ibrahim Ahmed</strong></p>
+      </div>
+      <div class="share-panel" aria-label="Dashboard sharing panel">
+        <div class="qr-wrap">
+          <img id="qrImage" alt="QR code for this dashboard" />
+        </div>
+        <div>
+          <h2>Scan Dashboard</h2>
+          <p>Use the QR code after hosting the dashboard online, or copy the current link.</p>
+          <button id="copyLink" type="button">Copy dashboard link</button>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="metrics" aria-label="Corpus totals">
+      <article class="metric">
+        <span>Total headline records</span>
+        <strong id="totalRecords">0</strong>
+      </article>
+      <article class="metric">
+        <span>Headline word tokens</span>
+        <strong id="totalTokens">0</strong>
+      </article>
+      <article class="metric">
+        <span>Definite articles</span>
+        <strong id="totalDefinite">0</strong>
+      </article>
+      <article class="metric">
+        <span>Indefinite articles</span>
+        <strong id="totalIndefinite">0</strong>
+      </article>
+      <article class="metric accent">
+        <span>Zero articles</span>
+        <strong id="totalZero">0</strong>
+      </article>
+    </section>
+
+    <section class="panel" id="outlets">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Supplementary headline profile</p>
+          <h2>Article Patterns Across Headline Records</h2>
+        </div>
+        <p class="note">These supplementary frequencies are normalized per 1,000 headline word tokens. They describe the headline register only and do not replace the full-corpus thesis findings. The expanded zero-article headline rule excludes proper nouns alone.</p>
+      </div>
+      <div class="chart-shell">
+        <svg id="frequencyChart" role="img" aria-label="Article frequency chart"></svg>
+      </div>
+      <div class="table-wrap">
+        <table id="outletTable">
+          <thead>
+            <tr>
+              <th>Outlet</th>
+              <th>Titles</th>
+              <th>Tokens</th>
+              <th>Def./1k</th>
+              <th>Indef./1k</th>
+              <th>Zero/1k</th>
+              <th>Domains</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel search-panel" id="search">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Advanced Search</p>
+          <h2>Query Definite, Indefinite, and Zero Articles</h2>
+        </div>
+        <p class="note">Click a title to open the original retrieved news page where a link is available.</p>
+      </div>
+      <div class="controls">
+        <label class="search-box">
+          <span>Keyword or phrase</span>
+          <input id="queryInput" type="search" placeholder="Search titles, authors, outlets, domains, e.g. inflation, tariffs, Reuters" />
+        </label>
+        <label>
+          <span>Outlet</span>
+          <select id="outletFilter">
+            <option value="all">All outlets</option>
+          </select>
+        </label>
+        <label>
+          <span>Sort</span>
+          <select id="sortMode">
+            <option value="date">Original order</option>
+            <option value="zero">Zero articles</option>
+            <option value="definite">Definite articles</option>
+            <option value="indefinite">Indefinite articles</option>
+            <option value="tokens">Word tokens</option>
+          </select>
+        </label>
+      </div>
+      <div class="button-row" aria-label="Article type filters">
+        <button class="filter active" data-type="all" type="button">All titles</button>
+        <button class="filter" data-type="Definite" type="button">Definite articles</button>
+        <button class="filter" data-type="Indefinite" type="button">Indefinite articles</button>
+        <button class="filter" data-type="Zero" type="button">Zero articles</button>
+        <button class="filter" data-type="no-link" type="button">Missing links</button>
+      </div>
+      <div class="result-summary" id="resultSummary"></div>
+    </section>
+
+    <section class="titles-section" id="titles">
+      <div class="title-list" id="titleList" aria-live="polite"></div>
+      <div class="load-row"><button id="loadMore" type="button">Show more records</button></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Research context</p>
+          <h2>How to Interpret the Dashboard</h2>
+        </div>
+      </div>
+      <div class="rq-grid" id="rqGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Article Occurrence in English Economic News · MA corpus dashboard · Nabaz Muhammad Saeed</p>
+  </footer>
+
+  <script src="dashboard-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
