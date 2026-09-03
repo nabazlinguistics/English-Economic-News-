@@ -1,0 +1,92 @@
+[
+  {
+    "outlet": "Associated Press",
+    "articles": 149,
+    "metadata": 149,
+    "words": 103100,
+    "missing_author": 3,
+    "missing_date": 2,
+    "missing_link": 0
+  },
+  {
+    "outlet": "BBC News",
+    "articles": 141,
+    "metadata": 142,
+    "words": 103016,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "Bloomberg",
+    "articles": 150,
+    "metadata": 150,
+    "words": 102264,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "CNBC",
+    "articles": 153,
+    "metadata": 155,
+    "words": 102565,
+    "missing_author": 0,
+    "missing_date": 3,
+    "missing_link": 0
+  },
+  {
+    "outlet": "CNN Business",
+    "articles": 120,
+    "metadata": 152,
+    "words": 103048,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "The New York Times",
+    "articles": 87,
+    "metadata": 87,
+    "words": 104325,
+    "missing_author": 1,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "Reuters",
+    "articles": 180,
+    "metadata": 182,
+    "words": 101975,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "The Guardian",
+    "articles": 128,
+    "metadata": 128,
+    "words": 103441,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "The Daily Telegraph",
+    "articles": 102,
+    "metadata": 102,
+    "words": 103771,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  },
+  {
+    "outlet": "The Wall Street Journal",
+    "articles": 153,
+    "metadata": 154,
+    "words": 102296,
+    "missing_author": 0,
+    "missing_date": 0,
+    "missing_link": 0
+  }
+]
