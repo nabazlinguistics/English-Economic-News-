@@ -44,5 +44,6 @@ jobs:
             echo "No appendix changes to commit."
           else
             git commit -m "Add permanent appendix materials for browser viewing"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
