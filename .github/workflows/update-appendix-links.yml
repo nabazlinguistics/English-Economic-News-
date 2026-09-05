@@ -1,0 +1,35 @@
+name: Activate permanent appendix links
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-appendix-links.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Replace temporary share links
+        run: python3 scripts/update_appendix_links.py
+
+      - name: Commit website update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No website changes to commit."
+          else
+            git commit -m "Use permanent mobile-friendly appendix links"
+            git pull --rebase origin main
+            git push origin main
+          fi
