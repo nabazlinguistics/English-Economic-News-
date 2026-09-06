@@ -155,3 +155,20 @@ body{
   .identity-card.researcher-campus::before,
   .identity-card.supervisor-campus::before{background:rgba(255,255,255,.78)}
 }
+
+/* Academic emphasis for the corpus welcome text */
+.outlet-directory-section .section-heading > p{
+  color:#24312e;
+  font-size:1rem;
+  font-weight:500;
+  line-height:1.75;
+  max-width:720px;
+  animation:welcomeFadeIn .9s ease-out both;
+}
+@keyframes welcomeFadeIn{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .outlet-directory-section .section-heading > p{animation:none}
+}
