@@ -92,3 +92,66 @@ body{
   body{background-position:center top,center 104px;background-size:auto,300px auto}
   .outlet-card::before{inset:14px 12px 14px 50%;opacity:.13}
 }
+
+
+/* Identity card campus backgrounds */
+.identity-card.researcher-campus,
+.identity-card.supervisor-campus{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  min-height:138px;
+  background:#fff;
+}
+.identity-card.researcher-campus::after,
+.identity-card.supervisor-campus::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-repeat:no-repeat;
+  background-size:cover;
+  transition:transform .25s ease,opacity .25s ease;
+}
+.identity-card.researcher-campus::before,
+.identity-card.supervisor-campus::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.86) 44%,rgba(255,255,255,.67) 100%);
+}
+.identity-card.researcher-campus::after{
+  background-image:url('assets/researcher-ranya-campus.png');
+  background-position:center 48%;
+  opacity:.55;
+}
+.identity-card.supervisor-campus::after{
+  background-image:url('assets/supervisor-qaladze-campus.png');
+  background-position:center 53%;
+  opacity:.58;
+}
+.identity-card.researcher-campus > *,
+.identity-card.supervisor-campus > *{
+  position:relative;
+  z-index:2;
+}
+.identity-card.researcher-campus:hover::after,
+.identity-card.researcher-campus:focus-visible::after,
+.identity-card.supervisor-campus:hover::after,
+.identity-card.supervisor-campus:focus-visible::after{
+  transform:scale(1.025);
+  opacity:.66;
+}
+.identity-card.researcher-campus:hover,
+.identity-card.researcher-campus:focus-visible,
+.identity-card.supervisor-campus:hover,
+.identity-card.supervisor-campus:focus-visible{
+  background:#fff;
+}
+@media(max-width:560px){
+  .identity-card.researcher-campus,
+  .identity-card.supervisor-campus{min-height:126px}
+  .identity-card.researcher-campus::before,
+  .identity-card.supervisor-campus::before{background:rgba(255,255,255,.78)}
+}
