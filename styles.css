@@ -8,3 +8,87 @@
 @media(max-width:900px){.intro{grid-template-columns:1fr}.workspace{grid-template-columns:1fr}.filters{border-right:0;border-bottom:1px solid var(--line)}.privacy-note{margin-top:0}.result{grid-template-columns:1fr auto}.record-index{grid-column:1/-1}.article-dialog .article-meta{grid-template-columns:1fr}.headline-stats{max-width:600px}.dashboard-identity{grid-template-columns:1fr}.identity-card{grid-template-columns:95px 1fr}.identity-card small{display:none}.appendix-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.qr-section{grid-template-columns:1fr;padding:28px}.qr-image-link{width:min(260px,100%);justify-self:center}.qr-copy h2{font-size:2rem}.topbar-actions .topbar-link{display:none}}
 @media(max-width:560px){.topbar{padding:0 16px}.quiet-button{font-size:.75rem}.brand-copy span{display:none}main{padding:0 14px 40px}.intro{padding:48px 0 32px}.intro h1{font-size:3.4rem}.headline-stats dt{font-size:1.8rem}.results-toolbar{align-items:flex-start;flex-direction:column}.results-toolbar select{width:100%}.results{padding:0 18px}.outlet-strip{padding-left:18px}.result{gap:14px}.result h3{font-size:1.2rem}.open-record{width:38px;height:38px}.research-details{grid-template-columns:1fr}.outlet-directory{grid-template-columns:1fr}.section-heading{align-items:start;flex-direction:column;gap:4px}.identity-card{grid-template-columns:1fr;gap:7px}.appendix-section{padding:22px 16px}.appendix-item{grid-template-columns:50px 1fr;padding:14px}.appendix-type{height:34px}}
+
+
+/* September 2026 visual refinement: Raparin watermark and outlet logos */
+body{
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(rgba(245,247,244,.91),rgba(245,247,244,.91)),
+    url('assets/university-of-raparin-logo.png');
+  background-repeat:no-repeat,no-repeat;
+  background-position:center top,center 112px;
+  background-size:auto,520px auto;
+  background-attachment:fixed,fixed;
+}
+
+/* Softer outlet colours with each outlet's own logo as a subtle background mark. */
+.outlet-card{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--outlet) 24%,white);
+  box-shadow:0 8px 20px rgba(18,32,29,.08);
+}
+.outlet-card::before{
+  content:"";
+  position:absolute;
+  inset:12px 12px 12px 42%;
+  z-index:-1;
+  background-image:var(--outlet-logo);
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:var(--logo-size,82%) auto;
+  opacity:.16;
+  transition:opacity .18s ease,transform .18s ease;
+}
+.outlet-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:linear-gradient(110deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.88) 54%,rgba(255,255,255,.66) 100%);
+}
+.outlet-card:hover,.outlet-card:focus-visible{
+  box-shadow:0 13px 28px rgba(18,32,29,.13);
+  filter:none;
+}
+.outlet-card:hover::before,.outlet-card:focus-visible::before{opacity:.24;transform:scale(1.035)}
+.outlet-card strong{color:var(--ink)}
+.outlet-card span{color:#596763}
+.outlet-card em{color:var(--outlet)}
+
+.outlet-pill{
+  color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--outlet) 22%,white);
+  box-shadow:0 3px 10px rgba(18,32,29,.07);
+}
+.outlet-pill b{color:var(--outlet)}
+
+.outlet-card.outlet-ap,.outlet-pill.outlet-ap{background:#fff2f2}
+.outlet-card.outlet-bbc,.outlet-pill.outlet-bbc{background:#fff0f0}
+.outlet-card.outlet-bloomberg,.outlet-pill.outlet-bloomberg{background:#f3f0fb}
+.outlet-card.outlet-cnbc,.outlet-pill.outlet-cnbc{background:#edf6ff}
+.outlet-card.outlet-cnn,.outlet-pill.outlet-cnn{background:#fff0f0}
+.outlet-card.outlet-nyt,.outlet-pill.outlet-nyt{background:#f3f3f3}
+.outlet-card.outlet-reuters,.outlet-pill.outlet-reuters{background:#fff5ed}
+.outlet-card.outlet-guardian,.outlet-pill.outlet-guardian{background:#eef4fb}
+.outlet-card.outlet-telegraph,.outlet-pill.outlet-telegraph{background:#eff6fb}
+.outlet-card.outlet-wsj,.outlet-pill.outlet-wsj{background:#f2f4f5}
+
+.outlet-ap{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Associated_Press_logo.svg');--logo-size:86%}
+.outlet-bbc{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/BBC_News_2022_%28Alt%2C_boxed%29.svg');--logo-size:76%}
+.outlet-bloomberg{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/New_Bloomberg_Logo.svg');--logo-size:88%}
+.outlet-cnbc{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/CNBC_2025.svg');--logo-size:62%}
+.outlet-cnn{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/CNN_Business_logo.svg');--logo-size:78%}
+.outlet-nyt{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/The_New_York_Times_Logo.svg');--logo-size:92%}
+.outlet-reuters{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Reuters_Logo.svg');--logo-size:78%}
+.outlet-guardian{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Guardian_2018.svg');--logo-size:76%}
+.outlet-telegraph{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Telegraph.svg');--logo-size:92%}
+.outlet-wsj{--outlet-logo:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/WSJ_Logo.svg');--logo-size:94%}
+
+@media(max-width:650px){
+  body{background-position:center top,center 104px;background-size:auto,300px auto}
+  .outlet-card::before{inset:14px 12px 14px 50%;opacity:.13}
+}
