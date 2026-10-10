@@ -20,6 +20,15 @@
     .corpus-citation p{margin:10px 0;line-height:1.65;color:#e2ebe7;overflow-wrap:anywhere}
     .corpus-citation a{color:var(--accent2);overflow-wrap:anywhere}
     .corpus-citation .apa-reference{padding-left:1.5em;text-indent:-1.5em}
+
+    .research-photo{max-width:640px;margin:0 auto 30px;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 36px rgba(18,32,29,.10)}
+    .research-photo-frame{aspect-ratio:4/3;overflow:hidden;background:#e9eeeb}
+    .research-photo-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 65%}
+    .research-photo figcaption{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 24px;border-top:4px solid var(--accent)}
+    .research-photo figcaption div{min-width:0}
+    .research-photo figcaption span{display:block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:7px}
+    .research-photo figcaption strong{display:block;font-family:Georgia,serif;font-size:1.1rem;line-height:1.4;color:var(--ink)}
+    @media(max-width:560px){.research-photo{border-radius:12px}.research-photo figcaption{gap:14px;padding:16px}.research-photo figcaption strong{font-size:.95rem}}
   </style>
 </head>
 <body>
@@ -46,6 +55,14 @@
         <div><dt id="recordCount">—</dt><dd>article records</dd></div>
       </dl>
     </section>
+
+    <figure class="research-photo">
+      <div class="research-photo-frame"><img src="assets/researcher-and-supervisor.jpeg" alt="Asst. Prof. Dr. Salih Ibrahim Ahmed on the left and researcher Nabaz Muhammad Saeed wearing a tie on the right" width="1152" height="1536" decoding="async"></div>
+      <figcaption>
+        <div><span>Supervisor · Left</span><strong>Asst. Prof. Dr. Salih Ibrahim Ahmed</strong></div>
+        <div><span>Researcher · Right</span><strong>Nabaz Muhammad Saeed</strong></div>
+      </figcaption>
+    </figure>
 
     <section class="dashboard-identity" aria-label="Research attribution">
       <button class="identity-card research-profile researcher-campus"><span>Researcher</span><strong>Nabaz Muhammad Saeed</strong><small>View research details ↗</small></button>
